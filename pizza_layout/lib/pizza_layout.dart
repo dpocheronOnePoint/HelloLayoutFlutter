@@ -28,5 +28,53 @@ List<Widget> showPizzaLayout(double sizeX, sizeY) {
     ),
   );
   layoutChildren.add(backgroundContainer);
+
+  Positioned pizzaCard = Positioned(
+    left: sizeX / 20,
+    child: Card(
+      elevation: 12,
+      color: Colors.white70,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: Column(
+        children: [
+          Text(
+            "Pizza Margherita",
+            style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.deepOrange[800]),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(12),
+            child: Text(
+              "This delicious pizza is made of Tomato,\nMozzarella and Basil.\n\nSeriously you can't miss it !",
+              style: TextStyle(fontSize: 18, color: Colors.grey[800]),
+            ),
+          )
+        ],
+      ),
+    ),
+  );
+  layoutChildren.add(pizzaCard);
+
+  Positioned buttonOrder = Positioned(
+      bottom: sizeY / 20,
+      left: sizeX / 20,
+      width: sizeX - sizeX / 10,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          primary: Colors.orange[900],
+          elevation: 12,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+        ),
+        child: const Text(
+          "Order now !",
+          style: TextStyle(fontSize: 20, color: Colors.white),
+        ),
+        onPressed: () {},
+      ));
+  layoutChildren.add(buttonOrder);
   return layoutChildren;
 }
