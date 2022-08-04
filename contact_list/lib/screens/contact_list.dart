@@ -45,6 +45,13 @@ List<ListTile> showContacts() {
   for (var contact in contacts) {
     list.add(ListTile(
       title: Text(contact.name),
+      subtitle: Text(contact.subtitle),
+      leading: CircleAvatar(
+        backgroundColor: Colors.amber[600],
+        child: Icon(contact.icon),
+      ),
+      trailing: const Icon(Icons.keyboard_arrow_right),
+      onTap: () => true,
     ));
   }
   return list;
